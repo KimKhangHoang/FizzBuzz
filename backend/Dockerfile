@@ -12,7 +12,7 @@ COPY ./backend/FizzBuzzAPI/*.csproj ./FizzBuzzAPI/
 RUN dotnet restore ./FizzBuzzAPI/FizzBuzzAPI.csproj
 
 # Copy the entire backend directory
-COPY . ./  
+COPY ./backend/FizzBuzzAPI/ ./FizzBuzzAPI/ 
 
 # Build the application
 RUN dotnet publish ./FizzBuzzAPI/FizzBuzzAPI.csproj -c Release -o /app/publish
@@ -26,7 +26,7 @@ WORKDIR /app
 COPY --from=build /app/publish .  
 
 # Expose the port the app runs on
-EXPOSE 5000  
+EXPOSE 8080 
 
 # Start the application
 ENTRYPOINT ["dotnet", "FizzBuzzAPI.dll"]  

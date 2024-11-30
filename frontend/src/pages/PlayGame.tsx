@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const PlayGame: React.FC<{ gameId?: number }> = ({ gameId = 1 }) => {
+const PlayGame: React.FC<{ gameId?: number }> = ({ gameId = 2 }) => {
   const [gameDescription, setGameDescription] = useState<string>(""); 
   const [rulesDescription, setRulesDescription] = useState<string>(""); 
   const [timeLimit, setTimeLimit] = useState<number | string >("");

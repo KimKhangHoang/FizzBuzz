@@ -1,15 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Programming\\5_CSharp.NET\\Projects\\FizzBuzz\\backend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42365373-95BD-48B8-8C48-58B409FDD665}|FizzBuzzAPI\\FizzBuzzAPI.csproj|d:\\programming\\5_csharp.net\\projects\\fizzbuzz\\backend\\fizzbuzzapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42365373-95BD-48B8-8C48-58B409FDD665}|FizzBuzzAPI\\FizzBuzzAPI.csproj|solutionrelative:fizzbuzzapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 248,
-          "SelectedChildIndex": -1,
+          "DockedHeight": 690,
+          "SelectedChildIndex": 20,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,6 +87,37 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Programming\\5_CSharp.NET\\Projects\\FizzBuzz\\backend\\FizzBuzzAPI\\Program.cs",
+              "RelativeDocumentMoniker": "FizzBuzzAPI\\Program.cs",
+              "ToolTip": "D:\\Programming\\5_CSharp.NET\\Projects\\FizzBuzz\\backend\\FizzBuzzAPI\\Program.cs",
+              "RelativeToolTip": "FizzBuzzAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T08:28:28.073Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 286,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
