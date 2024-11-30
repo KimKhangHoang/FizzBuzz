@@ -121,6 +121,11 @@
         "Name": "playerInput",
         "Type": "System.String",
         "IsRequired": false
+      },
+      {
+        "Name": "randomNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

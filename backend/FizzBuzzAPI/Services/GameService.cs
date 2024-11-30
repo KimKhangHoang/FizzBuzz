@@ -2,7 +2,6 @@
 using FizzBuzzAPI.Models;
 using FizzBuzzAPI.Data;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FizzBuzzAPI.Services
 {
@@ -74,7 +73,7 @@ namespace FizzBuzzAPI.Services
         }
 
         // Verify player answer and return whether it's correct
-        public async Task<bool> VerifyAnswer(int gameId, string playerInput)
+        public async Task<bool> VerifyAnswer(int gameId, string playerInput, int randomNumber)
         {
             var game = await GetGameById(gameId);
             if (game == null)
@@ -88,23 +87,31 @@ namespace FizzBuzzAPI.Services
             // Check if the player input is a number or a replacement string
             bool isNumber = int.TryParse(playerInput, out int inputNumber);
 
-            // Generate the expected result based on the rules
+            // Generate the expected replacement result based on the rules and random number
             foreach (var rule in gameRules)
             {
-                // If input is a number, check the divisibility
-                if (isNumber && inputNumber % rule.Divisor == 0)
+                if (randomNumber % rule.Divisor == 0)
                 {
                     result.Add(rule.Replacement);
                 }
             }
 
-            // Join the expected results from the rules
+            // Join the expected replacement result from the rules
             string expectedResult = string.Join("", result);
 
-            // Determine if the input is correct
-            bool isCorrect = (isNumber && playerInput == inputNumber.ToString()) || playerInput.Equals(expectedResult, StringComparison.OrdinalIgnoreCase);
+            // Check if the player input is the exact number (if random number is not divisible by any rule)
+            if (expectedResult == string.Empty && isNumber && inputNumber == randomNumber)
+            {
+                return true;
+            }
+            // Check if the player input matches the expected result (case insensitive)
+            else if (expectedResult.Equals(playerInput, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
 
-            return isCorrect;
+            // Otherwise, the answer is incorrect
+            return false;
         }
     }
 }

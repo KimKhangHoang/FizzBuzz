@@ -82,9 +82,9 @@ namespace FizzBuzzAPI.Controllers
 
         // POST: api/game/verify
         [HttpPost("verify")]
-        public async Task<IActionResult> VerifyAnswer(int gameId, string playerInput)
+        public async Task<IActionResult> VerifyAnswer(int gameId, string playerInput, int randomNumber)
         {
-            var result = await _gameService.VerifyAnswer(gameId, playerInput);
+            var result = await _gameService.VerifyAnswer(gameId, playerInput, randomNumber);
             return Ok(new { Result = result });
         }
     }

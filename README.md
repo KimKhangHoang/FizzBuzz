@@ -47,11 +47,13 @@ The **FizzBuzz Game API** is a web application that allows users to create and p
 
 1. Run the `backend` folder by targeting the `.csproj` file or the `.sln` file using your preferred method (e.g., `dotnet run` or your IDE's play button).
 2. Run the `frontend` folder by your preferred method and dependencies (e.g., npm run dev or yarn dev)
+3. Explore the web interface through the provided navigation.
 
 ---
 
 ## Future Improvements
 
 - **Docker Compose** setup is incomplete.
+- **Repository Architecture** for separation of concerns and better maintainability.
 - **Unit and Integration Tests** with .NET are not yet implemented.
 - **Additional Side Functionalities** such as modifying, deleting, viewing, or choosing existing games.

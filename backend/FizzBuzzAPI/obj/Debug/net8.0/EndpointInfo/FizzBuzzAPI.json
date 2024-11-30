@@ -210,6 +210,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "randomNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {

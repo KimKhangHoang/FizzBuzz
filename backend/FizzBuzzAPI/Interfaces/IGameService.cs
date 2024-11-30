@@ -20,6 +20,6 @@ namespace FizzBuzzAPI.Interfaces
         int GetRandomNumber(int gameId);
 
         // Verify a player's input against the game rules
-        Task<bool> VerifyAnswer(int gameId, string playerInput);
+        Task<bool> VerifyAnswer(int gameId, string playerInput, int randomNumber);
     }
 }
