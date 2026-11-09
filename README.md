@@ -1,59 +1,62 @@
-# FizzBuzz Game API
+# FizzBuzz Game
 
-## Project Overview
+A web app for making up your own FizzBuzz-style games and playing them. You choose which numbers map to which words and how high the numbers go, then answer random numbers against the clock and get a score at the end.
 
-The **FizzBuzz Game API** is a web application that allows users to create and play a customizable FizzBuzz-like game. Users can set their own rules, including the numbers and strings used for the game, and choose the range of numbers to play with. The backend is built with ASP.NET Web API, while the frontend utilizes React with TypeScript from Vite.
+The backend is an ASP.NET Web API with Entity Framework and SQL Server, and the frontend is React with TypeScript, built with Vite.
 
----
+![Creating a game with three rules: 7 is Fizz, 11 is Buzz and 3 is Foo](docs/screenshot.webp)
+
+[Watch the demo video](https://drive.google.com/file/d/1cM2hAX-ElEybmh4XAQlP9e35T7Jh2oc6/view) (about a minute).
 
 ## Features
 
-- Create customizable FizzBuzz games with user-defined rules.
-- Players can enter their answers and get immediate feedback score.
+- Create a game with a name, an author, a number range and any number of rules, where each rule maps a divisor to a word.
+- Play a game with a time limit you set. Each round shows a random number in the range, and you type the number or the matching words.
+- See your score when the time runs out.
 
----
-
-## Technologies Used
+## Tech stack
 
 - **Frontend:** React, TypeScript, Vite, Axios, Bootstrap
-- **Backend:** ASP.NET Web API, Entity Framework
+- **Backend:** ASP.NET Web API (.NET 8), Entity Framework Core
 - **Database:** SQL Server
-- **Development Tools:** Docker, Visual Studio, Node.js
 
----
-
-## Setup
+## Run it locally
 
 ### Prerequisites
 
-- .NET 8.0 SDK installed.
-- SQL Server with a valid database configured based on the provided template `DB_Schema_Script.sql` in the `backend` folder.
-- Node.js (with npm or yarn) installed for the `frontend`.
+- .NET 8 SDK
+- SQL Server
+- Node.js and npm
 
-### Environment Configuration
+### 1. Database
 
-1. Create an `appsettings.json` file in the project directory of `backend` with the provided in the `appsettings.json.example` to match your database connection strings.
-2. Create a `.env` file in the project directory of `frontend` with the format provided in the `.env.example` file to match your backend's API URL.
+Create a database in SQL Server and run [`backend/DB_Schema_Script.sql`](backend/DB_Schema_Script.sql) against it to create the tables.
 
-### Installation
+### 2. Backend
 
-1. Clone the repository.
-2. Set up the environment configuration as described above.
-3. Install the required packages in the project (e.g., `dotnet restore`, `npm install` or `yarn install`).
+1. Copy `backend/FizzBuzzAPI/appsettings.json.example` to `backend/FizzBuzzAPI/appsettings.json` and set `DefaultConnection` to your database.
+2. From `backend/FizzBuzzAPI`, run:
 
----
+   ```sh
+   dotnet run --launch-profile https
+   ```
 
-## Running The Program
+   The API runs at https://localhost:7037, with Swagger UI at https://localhost:7037/swagger.
 
-1. Run the `backend` folder by targeting the `.csproj` file or the `.sln` file using your preferred method (e.g., `dotnet run` or your IDE's play button).
-2. Run the `frontend` folder by your preferred method and dependencies (e.g., npm run dev or yarn dev)
-3. Explore the web interface through the provided navigation.
+### 3. Frontend
 
----
+1. Copy `frontend/.env.example` to `frontend/.env` and set `VITE_API_BASE_URL` to the backend URL, for example `https://localhost:7037`.
+2. From `frontend`, run:
 
-## Future Improvements
+   ```sh
+   npm install
+   npm run dev
+   ```
 
-- **Docker Compose** setup is incomplete.
-- **Repository Architecture** for separation of concerns and better maintainability.
-- **Unit and Integration Tests** with .NET are not yet implemented.
-- **Additional Side Functionalities** such as modifying, deleting, viewing, or choosing existing games.
+   Then open http://localhost:5173.
+
+## Known gaps
+
+- The `docker-compose.yml` is a work in progress and isn't a supported way to run the app yet.
+- There are no automated tests.
+- Games can't be edited, deleted or browsed from the UI yet, and the **Play Game** link always opens the first game. To play another game, go to `/play-game/<id>` directly.
