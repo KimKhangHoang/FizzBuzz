@@ -6,6 +6,8 @@ The backend is an ASP.NET Web API with Entity Framework and SQL Server, and the 
 
 ![Creating a game with three rules: 7 is Fizz, 11 is Buzz and 3 is Foo](docs/screenshot.webp)
 
+[Watch the demo video](https://drive.google.com/file/d/1cM2hAX-ElEybmh4XAQlP9e35T7Jh2oc6/view) (about a minute).
+
 ## Features
 
 - Create a game with a name, an author, a number range and any number of rules, where each rule maps a divisor to a word.
